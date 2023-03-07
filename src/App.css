@@ -1,0 +1,52 @@
+.alignment {
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.grid {
+    float: left;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ebecec;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.splitContainer {
+    display: flex;
+}
+
+.split {
+    margin: 0 5px 0 5px;
+    padding: 0 5px 0 0;
+    border-right: 1px solid #cfd1d1;
+}
+
+p {
+    line-height: 10px;
+}
+
+.fontColor {
+    color: #8c8f92;
+}
+
+.smaller {
+    font-size: small;
+}
+
+.larger {
+    font-size: 60px;
+}
+
+.blacknWhite {
+    filter: grayscale(100%);
+    /* background-color:black; */
+    /* -webkit-filter: grayscale(100%); */
+}
+
+input {
+    padding: 10px;
+    border-radius: 25px;
+    border: 1px solid black;
+    background:#ebecec;
+}
