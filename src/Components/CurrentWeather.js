@@ -1,7 +1,7 @@
 import React from "react";
+const CurrentWeather = ({ location , date, tempCurrent, dayIcon, humidity, windSpeed, weatherDescription, sunRise, sunSet }) => {
 
-const DailyWeather = ({ dateNum, dayIcon, tempHigh, tempLow, weatherDescription, sunRise, sunSet }) => {
-    dateNum = new Date(dateNum * 1000)
+    date = new Date(date * 1000)
     let options = {
         weekday: "long",
         month: "long",
@@ -9,8 +9,9 @@ const DailyWeather = ({ dateNum, dayIcon, tempHigh, tempLow, weatherDescription,
         hour: "numeric",
         minute: "numeric"
     }
-    dateNum = Intl.DateTimeFormat('en-US', options).format(dateNum);
-    let dateArray = dateNum.split(",");
+
+    date = Intl.DateTimeFormat('en-US', options).format(date);
+    let dateArray = date.split(",");
     let dateTime = dateArray[1].replace("at", ",");
 
     const time = (sunTime) => {
@@ -22,27 +23,24 @@ const DailyWeather = ({ dateNum, dayIcon, tempHigh, tempLow, weatherDescription,
         sunTime = Intl.DateTimeFormat('en-US', options).format(sunTime);
         return sunTime;
     }
-
-    return (
-    <div className="grid">
+    return (<div className="currentData">
+        <p className="fontColor bold">{location.data.city} ,{location.data.state} ,{location.data.country} </p>
         <h3>{dateArray[0]}</h3>
         <p className="fontColor">{dateTime}</p>
+        <h1>{tempCurrent} °C</h1>
         <img className="blacknWhite" src={dayIcon} alt="Weather Icon" />
         <div className="splitContainer smaller">
             <span className="split">
-                <p>Low - {tempLow} °C</p>
-                <p>High - {tempHigh} °C</p>
+                <p>Humidity - {humidity} %</p>
+                <p>Wind Speed - {windSpeed} m/sec</p>
             </span>
-            <span>
+            <span >
                 <p>Sunrise - {time(sunRise)}</p>
                 <p>Sunset - {time(sunSet)}</p>
             </span>
         </div>
         <p>{weatherDescription}</p>
+        {/* creating router link to display hourly forecast */}
     </div>)
 }
-export default DailyWeather
-
-// Notes:
-// dateNum : An integer value representing the number of milliseconds since January 1, 1970, 00:00:00 
-// getDay() returns day of the week starting from 0 (sunday)
+export default CurrentWeather;

@@ -12,14 +12,23 @@
     text-align: center;
 }
 
+.currentData {
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #ebecec;
+    border-radius: 5px;
+    text-align: center;
+}
+
 .splitContainer {
     display: flex;
+    justify-content: center;
 }
 
 .split {
     margin: 0 5px 0 5px;
     padding: 0 5px 0 0;
-    border-right: 1px solid #cfd1d1;
+    border-right: 1px solid #cfd1d1;  
 }
 
 p {
@@ -40,8 +49,6 @@ p {
 
 .blacknWhite {
     filter: grayscale(100%);
-    /* background-color:black; */
-    /* -webkit-filter: grayscale(100%); */
 }
 
 input {
@@ -49,4 +56,8 @@ input {
     border-radius: 25px;
     border: 1px solid black;
     background:#ebecec;
+}
+
+.bold{
+    font-weight: bold;
 }
