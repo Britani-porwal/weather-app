@@ -4,7 +4,6 @@
 }
 
 .grid {
-    float: left;
     margin: 10px;
     padding: 10px;
     border: 1px solid #ebecec;
@@ -28,11 +27,7 @@
 .split {
     margin: 0 5px 0 5px;
     padding: 0 5px 0 0;
-    border-right: 1px solid #cfd1d1;  
-}
-
-p {
-    line-height: 10px;
+    border-right: 1px solid #cfd1d1;
 }
 
 .fontColor {
@@ -55,9 +50,16 @@ input {
     padding: 10px;
     border-radius: 25px;
     border: 1px solid black;
-    background:#ebecec;
+    background: #ebecec;
 }
 
-.bold{
+.bold {
     font-weight: bold;
+}
+
+.flexContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
 }
